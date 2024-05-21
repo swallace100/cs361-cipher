@@ -69,21 +69,21 @@ def handle_user_choice():
 def start_cipher():
     time.sleep(1)
     print("\nCipher Microservice\n")
-    print("The Cipher gets an integer from the user and shifts the letters read fromcipher-input.txt that many times.")
+    print("The Cipher gets an integer from the user and shifts the letters read from cipher-data.txt that many times.")
     print("Input 'x' or the word 'exit' to exit the program.\n")
     print("Input an integer for the cipher:")
 
     cipher_num = get_user_input()
 
     path_dirname = os.path.dirname(__file__)
-    file_path = os.path.join(path_dirname, "cipher-input.txt")
+    file_path = os.path.join(path_dirname, "cipher-data.txt")
     file_string = read_file(file_path)
 
     cipher_result = process_cipher(file_string, cipher_num)
     print("The cipher shifted value is: " + cipher_result)
 
     write_file(file_path, cipher_result)
-    print("The shifted value has been written to cipher-input.txt\n")
+    print("The shifted value has been written to cipher-data.txt\n")
     print("Input a different number? [yes/no]")
 
     handle_user_choice()
